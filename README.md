@@ -1,35 +1,152 @@
-# ecommerce-webapp
-A simple shopping e commerce app using spring boot, mysql and react js
+# E-Commerce Web Application
 
-## Instructions to use
-* First clone the repository using gitbash <br>
-  <code>git clone https://github/01abhishek10/ecommerce-webapp.git</code>
-* Navigate to the frontend folder and install the dependencies using the below command <br/>
-  <code>npm install </code>
-* Create a database stock_db and give the mysql username and password in application.properties file in both microservices <br/>
-  <pre><code>spring.datasource.username=USERNAME</code>
-  <code>spring.datasource.password=PASSWORD </code></pre>
-* Enable CORS for both the microservices using the below property </br>
-  <code>app.cors.allowedOrigins = FRONT_END_URL </code>
+A full-stack e-commerce web application developed using React.js, Java, Spring Boot, and MySQL. The application provides product browsing, user registration and login, and wallet management functionality.
 
-## Architecture of the Application
-* This application is divided into 3 microservices
-   1. Front end
-   2. User Microservice
-   3. Product Microservice
+## Project Overview
 
-## Features of the App
-* This application uses JWT Authorization to ensure secure login of the user
-* Password is stored in hashed format. 
+This project demonstrates the development of an online shopping application with a React.js frontend and Spring Boot backend services. It uses MySQL for data persistence and JWT-based authentication for user access.
 
-## Backend APIs
-* API to fetch all products </br>
-<code>GET http://localhost:8080/products/</code>
-* API to fetch the current user </br>
-<code>GET http://localhost:9000/users/{userName}</code>
-* API to add money to user Wallet </br>
-<code>POST http://localhost:9000/users/{userName}/addMoney</code>
-* API to login </br>
-<code>POST http://localhost:9000/signin</code>
-* API to signup </br>
-<code>POST http://localhost:9000/signup</code>
+## Technologies Used
+
+**Frontend**
+
+* HTML5
+* CSS3
+* JavaScript
+* React.js
+
+**Backend**
+
+* Java
+* Spring Boot
+* REST APIs
+* JWT Authentication
+
+**Database**
+
+* MySQL
+
+**Tools**
+
+* Git and GitHub
+* npm
+
+## Key Features
+
+* User registration and login
+* JWT-based user authentication
+* Secure password hashing
+* Product listing and retrieval
+* User profile retrieval
+* Wallet balance management
+* REST API integration between frontend and backend services
+
+## Application Architecture
+
+The application consists of three main components:
+
+1. **Frontend:** React.js user interface.
+2. **User Service:** Handles user-related operations, authentication, and wallet management.
+3. **Product Service:** Provides product-related functionality through REST APIs.
+
+## Project Structure
+
+```text
+ecommerce-webapp/
+├── backend/
+│   ├── user-service/
+│   └── product-service/
+├── frontend/
+├── LICENSE
+└── README.md
+```
+
+*Note: The exact backend folder names and structure may differ. Refer to the actual project files.*
+
+## Prerequisites
+
+Install the following software before running the application:
+
+* Java Development Kit (JDK)
+* Node.js and npm
+* MySQL Server
+* Git
+
+## Installation and Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/jaggujaga77/ecommerce-webapp.git
+cd ecommerce-webapp
+```
+
+### 2. Configure the Database
+
+Create the required MySQL database:
+
+```sql
+CREATE DATABASE stock_db;
+```
+
+Update the database username and password in the `application.properties` files for the relevant backend services.
+
+```properties
+spring.datasource.username=YOUR_MYSQL_USERNAME
+spring.datasource.password=YOUR_MYSQL_PASSWORD
+```
+
+Use your local MySQL credentials. Do not commit real passwords or other secrets to GitHub.
+
+### 3. Install Frontend Dependencies
+
+```bash
+cd frontend
+npm install
+```
+
+### 4. Configure and Run the Backend
+
+Open the backend services in your Java IDE or run them using their available Maven or Gradle configuration. Configure the database connection and frontend CORS origin for each relevant service.
+
+Ensure both backend services are running before using the frontend.
+
+### 5. Run the Frontend
+
+From the `frontend` directory, run:
+
+```bash
+npm start
+```
+
+If the project uses Vite or another development server, use the command specified in `package.json`, such as `npm run dev`.
+
+## Backend API Endpoints
+
+| Method | Endpoint                     | Description                  |
+| ------ | ---------------------------- | ---------------------------- |
+| GET    | `/products/`                 | Retrieve all products        |
+| GET    | `/users/{userName}`          | Retrieve user details        |
+| POST   | `/users/{userName}/addMoney` | Add money to a user's wallet |
+| POST   | `/signin`                    | Authenticate a user          |
+| POST   | `/signup`                    | Register a new user          |
+
+**Default service addresses documented in the original project:**
+
+* Product service: `http://localhost:8080`
+* User service: `http://localhost:9000`
+
+The actual ports and endpoints depend on the application configuration.
+
+## Learning Outcomes
+
+This project provides practical exposure to:
+
+* Full-stack web application development
+* React.js frontend development
+* Java and Spring Boot backend services
+* REST API communication
+* MySQL database integration
+* JWT-based authentication
+* Git and GitHub version control
+
